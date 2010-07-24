@@ -4444,3 +4444,1032 @@ Migrating to ChangeTypeToTypeId (20100724022330)
 ')[0m
   [4;36;1mCourse Create (0.6ms)[0m   [0;1mINSERT INTO "courses" ("course", "created_at", "code", "updated_at", "trimester") VALUES('EPSY', '2010-07-24 02:50:35', 244, '2010-07-24 02:50:35', 'Trimester 2')[0m
   [4;35;1mStream Create (14.7ms)[0m   [0mINSERT INTO "streams" ("created_at", "updated_at", "type_id", "crn") VALUES('2010-07-24 02:50:35', '2010-07-24 02:50:35', 'L2', 18080)[0m
+
+
+Processing PlannerController#index (for 127.0.0.1 at 2010-07-24 14:54:45) [GET]
+  [4;36;1mCourse Load (390.7ms)[0m   [0;1mSELECT * FROM "courses" ORDER BY course[0m
+Rendering template within layouts/planner
+Rendering planner/index
+
+ActionView::TemplateError (wrong number of arguments (1 for 0)) on line #7 of app/views/planner/index.html.erb:
+4:   <p>
+5:     <ul>
+6:       <% for c in @courses -%>
+7:           <li><%=h c.course c.code %></li>
+8:       <% end %>
+9:     </ul>
+10: 
+
+    app/views/planner/index.html.erb:7:in `course'
+    app/views/planner/index.html.erb:7
+    app/views/planner/index.html.erb:6:in `each'
+    app/views/planner/index.html.erb:6
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (323.9ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PlannerController#index (for 127.0.0.1 at 2010-07-24 14:56:43) [GET]
+  [4;35;1mCourse Load (294.1ms)[0m   [0mSELECT * FROM "courses" ORDER BY course[0m
+Rendering template within layouts/planner
+Rendering planner/index
+Completed in 803ms (View: 335, DB: 294) | 200 OK [http://localhost/planner/]
+
+
+Processing PlannerController#index (for 127.0.0.1 at 2010-07-24 15:01:24) [GET]
+
+SyntaxError (/home/cameron/railsdev/corsair/app/models/course.rb:11: syntax error, unexpected '<'
+    when < 10
+          ^
+/home/cameron/railsdev/corsair/app/models/course.rb:13: syntax error, unexpected kWHEN, expecting kEND
+    when < 100
+        ^
+/home/cameron/railsdev/corsair/app/models/course.rb:19: syntax error, unexpected kEND, expecting $end):
+  app/controllers/planner_controller.rb:4:in `index'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (192.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PlannerController#index (for 127.0.0.1 at 2010-07-24 15:02:22) [GET]
+  [4;36;1mCourse Load (452.8ms)[0m   [0;1mSELECT * FROM "courses" ORDER BY course[0m
+Rendering template within layouts/planner
+Rendering planner/index
+
+ActionView::TemplateError (undefined method `code_string' for #<Course:0xb660d7fc>) on line #7 of app/views/planner/index.html.erb:
+4:   <p>
+5:     <ul>
+6:       <% for c in @courses -%>
+7:           <li><%=h "#{c.course}, #{c.code_string}" %></li>
+8:       <% end %>
+9:     </ul>
+10: 
+
+    app/views/planner/index.html.erb:7
+    app/views/planner/index.html.erb:6:in `each'
+    app/views/planner/index.html.erb:6
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (663.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PlannerController#index (for 127.0.0.1 at 2010-07-24 15:02:36) [GET]
+  [4;35;1mCourse Load (241.9ms)[0m   [0mSELECT * FROM "courses" ORDER BY course[0m
+Rendering template within layouts/planner
+Rendering planner/index
+Completed in 524ms (View: 111, DB: 242) | 200 OK [http://localhost/planner/]
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 1 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L2' AND "streams"."crn" = 15420) LIMIT 1[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCourses (20100724005946)
+Migrating to CreateStreams (20100724010431)
+Migrating to CreateLectures (20100724010709)
+Migrating to ChangeTypeToTypeId (20100724022330)
+Migrating to AddStreamIdToCourses (20100724033400)
+  [4;36;1mSQL (5.6ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (31.7ms)[0m   [0mALTER TABLE "streams" ADD "course_id" integer[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "lectures" ADD "stream_id" integer[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100724033400')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("courses")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("lectures")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("streams")[0m
+  [4;36;1mCourse Load (5.2ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 1 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L2' AND "streams"."crn" = 15420) LIMIT 1[0m
+  [4;36;1mLecture Create (2.0ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:30:00', '2010-07-24 03:40:52', 'T', '2010-07-24 03:40:52', '2000-01-01 14:40:00', 1, 'RWW222
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 6604) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 09:50:00', '2010-07-24 03:40:52', 'MW', '2010-07-24 03:40:52', '2000-01-01 09:00:00', 2, 'KKLT303
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.1ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 6604) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 09:50:00', '2010-07-24 03:40:52', 'R', '2010-07-24 03:40:52', '2000-01-01 09:00:00', 2, 'KKLT303
+')[0m
+  [4;35;1mCourse Load (0.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L4' AND "streams"."crn" = 6605) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:50:00', '2010-07-24 03:40:52', 'MW', '2010-07-24 03:40:52', '2000-01-01 11:00:00', 4, 'KKLT303
+')[0m
+  [4;36;1mCourse Load (0.2ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L4' AND "streams"."crn" = 6605) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:50:00', '2010-07-24 03:40:52', 'R', '2010-07-24 03:40:52', '2000-01-01 11:00:00', 4, 'KKLT303
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (1.2ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:50:00', '2010-07-24 03:40:52', 'W', '2010-07-24 03:40:52', '2000-01-01 12:00:00', 6, 'OK501
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (1.2ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:40:52', 'MR', '2010-07-24 03:40:52', '2000-01-01 10:00:00', 6, 'VZ509
+')[0m
+  [4;35;1mCourse Load (3.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (19.3ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:40:52', 'W', '2010-07-24 03:40:52', '2000-01-01 10:00:00', 6, 'HU113
+')[0m
+  [4;36;1mCourse Load (93.1ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.7ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 08:50:00', '2010-07-24 03:40:52', 'R', '2010-07-24 03:40:52', '2000-01-01 08:00:00', 6, 'KK103
+')[0m
+  [4;35;1mCourse Load (1.2ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:00:00', '2010-07-24 03:40:52', 'M', '2010-07-24 03:40:52', '2000-01-01 15:10:00', 6, 'OK501
+')[0m
+  [4;36;1mCourse Load (0.3ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (18.1ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:00:00', '2010-07-24 03:40:53', 'MW', '2010-07-24 03:40:53', '2000-01-01 13:10:00', 6, 'OK501
+')[0m
+  [4;35;1mCourse Load (6.1ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (4.1ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.8ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:50:00', '2010-07-24 03:40:53', 'F', '2010-07-24 03:40:53', '2000-01-01 11:00:00', 6, 'OK501
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:50:00', '2010-07-24 03:40:53', 'M', '2010-07-24 03:40:53', '2000-01-01 12:00:00', 6, 'EA001
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (1.0ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:00:00', '2010-07-24 03:40:53', 'T', '2010-07-24 03:40:53', '2000-01-01 13:10:00', 6, 'EA026
+')[0m
+  [4;36;1mCourse Load (0.1ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (2.7ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:50:00', '2010-07-24 03:40:53', 'MR', '2010-07-24 03:40:53', '2000-01-01 12:00:00', 6, 'HU317
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (22.6ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.7ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:40:53', 'W', '2010-07-24 03:40:53', '2000-01-01 10:00:00', 6, 'MY105
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.0ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:50:00', '2010-07-24 03:40:53', 'T', '2010-07-24 03:40:53', '2000-01-01 11:00:00', 6, 'KK103
+')[0m
+  [4;35;1mCourse Load (0.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:50:00', '2010-07-24 03:40:53', 'R', '2010-07-24 03:40:53', '2000-01-01 12:00:00', 6, 'OK301
+')[0m
+  [4;36;1mCourse Load (0.1ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:40:54', 'F', '2010-07-24 03:40:54', '2000-01-01 10:00:00', 6, 'KK103
+')[0m
+  [4;35;1mCourse Load (5.9ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (2.7ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:50:00', '2010-07-24 03:40:54', 'MWF', '2010-07-24 03:40:54', '2000-01-01 12:00:00', 6, 'KK103
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:00:00', '2010-07-24 03:40:54', 'MF', '2010-07-24 03:40:54', '2000-01-01 13:10:00', 6, 'KK103
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (12.7ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:00:00', '2010-07-24 03:40:54', 'M', '2010-07-24 03:40:54', '2000-01-01 14:10:00', 6, 'KK104
+')[0m
+  [4;36;1mCourse Load (6.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (9.8ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:40:54', 'M', '2010-07-24 03:40:54', '2000-01-01 10:00:00', 6, 'EA004
+')[0m
+  [4;35;1mCourse Load (9.8ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.2ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:00:00', '2010-07-24 03:40:54', 'MWR', '2010-07-24 03:40:54', '2000-01-01 14:10:00', 6, 'KK105
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (5.0ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:00:00', '2010-07-24 03:40:54', 'R', '2010-07-24 03:40:54', '2000-01-01 13:10:00', 6, 'VZ515
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (10.4ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:40:54', 'W', '2010-07-24 03:40:54', '2000-01-01 10:00:00', 6, 'EA026
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (4.1ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:40:54', 'R', '2010-07-24 03:40:54', '2000-01-01 10:00:00', 6, 'AM104
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (1.0ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.2ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:50:00', '2010-07-24 03:40:54', 'TR', '2010-07-24 03:40:54', '2000-01-01 12:00:00', 6, 'EA026
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:40:54', 'MR', '2010-07-24 03:40:54', '2000-01-01 10:00:00', 6, 'VZ510
+')[0m
+  [4;35;1mCourse Load (0.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:00:00', '2010-07-24 03:40:54', 'R', '2010-07-24 03:40:54', '2000-01-01 13:10:00', 6, 'VZ510
+')[0m
+  [4;36;1mCourse Load (0.3ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.5ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (26.2ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:00:00', '2010-07-24 03:40:54', 'T', '2010-07-24 03:40:54', '2000-01-01 14:10:00', 6, 'KK103
+')[0m
+  [4;35;1mCourse Load (0.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 15281) LIMIT 1[0m
+  [4;35;1mLecture Create (0.3ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:54', 'TR', '2010-07-24 03:40:54', '2000-01-01 13:40:00', 32, 'RHLT1
+')[0m
+  [4;36;1mCourse Load (3.6ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.6ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L2' AND "streams"."crn" = 18776) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:40:54', 'R', '2010-07-24 03:40:54', '2000-01-01 16:40:00', 33, 'GBLT1
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L2' AND "streams"."crn" = 18776) LIMIT 1[0m
+  [4;35;1mLecture Create (25.0ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:40:54', 'T', '2010-07-24 03:40:54', '2000-01-01 16:40:00', 33, 'RHLT2
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (5.5ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.4ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:40:54', 'W', '2010-07-24 03:40:54', '2000-01-01 10:30:00', 35, 'RWW222
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.4ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:20:00', '2010-07-24 03:40:55', 'TR', '2010-07-24 03:40:55', '2000-01-01 09:30:00', 35, 'RWW223
+')[0m
+  [4;36;1mCourse Load (6.7ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (7.1ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (12.9ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:30:00', '2010-07-24 03:40:55', 'M', '2010-07-24 03:40:55', '2000-01-01 15:40:00', 35, 'RWW222
+')[0m
+  [4;35;1mCourse Load (0.1ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.5ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.4ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:55', 'M', '2010-07-24 03:40:55', '2000-01-01 13:40:00', 35, 'RWW220
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (1.0ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:40:55', 'M', '2010-07-24 03:40:55', '2000-01-01 16:40:00', 35, 'RWW222
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:20:00', '2010-07-24 03:40:55', 'TR', '2010-07-24 03:40:55', '2000-01-01 10:30:00', 35, 'RWW223
+')[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (1.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.4ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:30:00', '2010-07-24 03:40:55', 'TR', '2010-07-24 03:40:55', '2000-01-01 15:40:00', 35, 'RWW223
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (14.5ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.3ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:55', 'WF', '2010-07-24 03:40:55', '2000-01-01 13:40:00', 35, 'RWW313
+')[0m
+  [4;36;1mCourse Load (0.6ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:40:55', 'W', '2010-07-24 03:40:55', '2000-01-01 11:30:00', 35, ' 
+')[0m
+  [4;35;1mCourse Load (9.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.4ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:40:55', 'WF', '2010-07-24 03:40:55', '2000-01-01 12:40:00', 35, 'RWW313
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (10.5ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.1ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:30:00', '2010-07-24 03:40:55', 'TR', '2010-07-24 03:40:55', '2000-01-01 14:40:00', 35, 'RWW312
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (1.1ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:40:55', 'TR', '2010-07-24 03:40:55', '2000-01-01 12:40:00', 35, 'RWW312
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (9.9ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:40:56', 'T', '2010-07-24 03:40:56', '2000-01-01 16:40:00', 35, 'RWW223
+')[0m
+  [4;35;1mCourse Load (6.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (1.1ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:40:56', 'M', '2010-07-24 03:40:56', '2000-01-01 12:40:00', 35, 'RWW220
+')[0m
+  [4;36;1mCourse Load (1.2ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:30:00', '2010-07-24 03:40:56', 'TR', '2010-07-24 03:40:56', '2000-01-01 14:40:00', 35, 'RWW223
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:30:00', '2010-07-24 03:40:56', 'M', '2010-07-24 03:40:56', '2000-01-01 14:40:00', 35, 'RWW222
+')[0m
+  [4;36;1mCourse Load (1.6ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:40:56', 'TR', '2010-07-24 03:40:56', '2000-01-01 12:40:00', 35, 'RWW223
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:40:56', 'M', '2010-07-24 03:40:56', '2000-01-01 11:30:00', 35, 'RWW222
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (5.8ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.7ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:20:00', '2010-07-24 03:40:56', 'M', '2010-07-24 03:40:56', '2000-01-01 10:30:00', 35, 'RWW222
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (7.2ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:40:56', 'TRF', '2010-07-24 03:40:56', '2000-01-01 11:30:00', 35, 'RWW223
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L2' AND "streams"."crn" = 213) LIMIT 1[0m
+  [4;36;1mLecture Create (13.2ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:30:00', '2010-07-24 03:40:56', 'TWF', '2010-07-24 03:40:56', '2000-01-01 15:40:00', 55, 'RHLT2
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:40:56', 'TWF', '2010-07-24 03:40:56', '2000-01-01 12:40:00', 56, 'GBLT2
+')[0m
+  [4;36;1mCourse Load (0.6ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:30:00', '2010-07-24 03:40:56', 'F', '2010-07-24 03:40:56', '2000-01-01 14:40:00', 56, 'RWW126
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (5.5ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;35;1mLecture Create (3.3ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:56', 'TF', '2010-07-24 03:40:56', '2000-01-01 13:40:00', 56, 'RWW126
+')[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (5.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;36;1mLecture Create (1.7ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:20:00', '2010-07-24 03:40:56', 'MT', '2010-07-24 03:40:56', '2000-01-01 09:30:00', 56, 'RWW222
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (6.2ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;35;1mLecture Create (1.2ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:40:56', 'MT', '2010-07-24 03:40:56', '2000-01-01 11:30:00', 56, 'RWW125
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:40:56', 'W', '2010-07-24 03:40:56', '2000-01-01 12:40:00', 56, 'RWW125
+')[0m
+  [4;35;1mCourse Load (3.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:56', 'W', '2010-07-24 03:40:56', '2000-01-01 13:40:00', 56, 'RWW223
+')[0m
+  [4;36;1mCourse Load (13.2ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (40.8ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:40:57', 'T', '2010-07-24 03:40:57', '2000-01-01 11:30:00', 56, 'RWW126
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (23.2ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;35;1mLecture Create (0.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:40:57', 'TW', '2010-07-24 03:40:57', '2000-01-01 16:40:00', 56, 'RWW125
+')[0m
+  [4;36;1mCourse Load (0.7ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;36;1mLecture Create (11.3ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:20:00', '2010-07-24 03:40:57', 'MT', '2010-07-24 03:40:57', '2000-01-01 10:30:00', 56, 'RWW125
+')[0m
+  [4;35;1mCourse Load (0.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 18:30:00', '2010-07-24 03:40:57', 'T', '2010-07-24 03:40:57', '2000-01-01 17:40:00', 56, 'RWW125
+')[0m
+  [4;36;1mCourse Load (39.3ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (2.8ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:30:00', '2010-07-24 03:40:57', 'MWR', '2010-07-24 03:40:57', '2000-01-01 14:40:00', 67, 'RHLT2
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:40:57', 'M', '2010-07-24 03:40:57', '2000-01-01 15:40:00', 67, 'RWW126
+')[0m
+  [4;36;1mCourse Load (5.9ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:57', 'R', '2010-07-24 03:40:57', '2000-01-01 13:40:00', 67, 'RWW129
+')[0m
+  [4;35;1mCourse Load (1.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:40:57', 'W', '2010-07-24 03:40:57', '2000-01-01 15:40:00', 67, 'RWW413
+')[0m
+  [4;36;1mCourse Load (1.1ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:57', 'W', '2010-07-24 03:40:57', '2000-01-01 12:40:00', 67, 'RWW128
+')[0m
+  [4;35;1mCourse Load (11.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (6.9ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;35;1mLecture Create (9.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:57', 'TF', '2010-07-24 03:40:57', '2000-01-01 12:40:00', 67, 'RWW127
+')[0m
+  [4;36;1mCourse Load (6.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:40:57', 'WR', '2010-07-24 03:40:57', '2000-01-01 15:40:00', 67, 'RWW312
+')[0m
+  [4;35;1mCourse Load (0.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (5.6ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;35;1mLecture Create (0.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:57', 'W', '2010-07-24 03:40:57', '2000-01-01 13:40:00', 67, 'RWW220
+')[0m
+  [4;36;1mCourse Load (3.1ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:57', 'R', '2010-07-24 03:40:57', '2000-01-01 12:40:00', 67, 'RWW125
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;35;1mLecture Create (4.7ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:57', 'MR', '2010-07-24 03:40:57', '2000-01-01 12:40:00', 67, 'RWW126
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.5ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;36;1mLecture Create (6.3ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:58', 'T', '2010-07-24 03:40:58', '2000-01-01 12:40:00', 67, 'RWW129
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 306 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (1.1ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 220) LIMIT 1[0m
+  [4;35;1mLecture Create (8.0ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:40:58', 'M', '2010-07-24 03:40:58', '2000-01-01 12:40:00', 78, 'RHLT2
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 306 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 220) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:58', 'F', '2010-07-24 03:40:58', '2000-01-01 12:40:00', 78, 'RHLT2
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 306 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 220) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:20:00', '2010-07-24 03:40:58', 'M', '2010-07-24 03:40:58', '2000-01-01 09:30:00', 78, 'RWW126
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 306 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (1.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 220) LIMIT 1[0m
+  [4;36;1mLecture Create (1.0ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:30:00', '2010-07-24 03:40:58', 'M', '2010-07-24 03:40:58', '2000-01-01 14:40:00', 78, 'RWW223
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 306 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 220) LIMIT 1[0m
+  [4;35;1mLecture Create (0.2ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:20:00', '2010-07-24 03:40:58', 'M', '2010-07-24 03:40:58', '2000-01-01 10:30:00', 78, 'RWW126
+')[0m
+  [4;36;1mCourse Load (0.1ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 306 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 220) LIMIT 1[0m
+  [4;36;1mLecture Create (14.6ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:40:58', 'M', '2010-07-24 03:40:58', '2000-01-01 11:30:00', 78, 'RWW126
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 306 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 220) LIMIT 1[0m
+  [4;35;1mLecture Create (4.0ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:40:58', 'M', '2010-07-24 03:40:58', '2000-01-01 16:40:00', 78, 'RWW223
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 306 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (1.0ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 220) LIMIT 1[0m
+  [4;36;1mLecture Create (0.4ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:30:00', '2010-07-24 03:40:58', 'M', '2010-07-24 03:40:58', '2000-01-01 15:40:00', 78, 'RWW223
+')[0m
+  [4;35;1mCourse Load (4.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 308 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 224) LIMIT 1[0m
+  [4;35;1mLecture Create (1.1ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:30:00', '2010-07-24 03:40:58', 'T', '2010-07-24 03:40:58', '2000-01-01 14:40:00', 86, 'GBLT1
+')[0m
+  [4;36;1mCourse Load (9.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 308 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (2.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 224) LIMIT 1[0m
+  [4;36;1mLecture Create (0.7ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:30:00', '2010-07-24 03:40:58', 'R', '2010-07-24 03:40:58', '2000-01-01 14:40:00', 86, 'GBLT1
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 308 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (2.5ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 224) LIMIT 1[0m
+  [4;35;1mLecture Create (4.7ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:20:00', '2010-07-24 03:40:58', 'TR', '2010-07-24 03:40:58', '2000-01-01 10:30:00', 86, 'RWW220
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 308 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 224) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:40:58', 'T', '2010-07-24 03:40:58', '2000-01-01 16:40:00', 86, 'RWW129
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 308 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (9.1ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 224) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:40:58', 'WR', '2010-07-24 03:40:58', '2000-01-01 11:30:00', 86, 'RWW220
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 308 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (5.7ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 224) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:40:58', 'WR', '2010-07-24 03:40:58', '2000-01-01 12:40:00', 86, 'RWW220
+')[0m
+  [4;35;1mCourse Load (10.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 308 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 224) LIMIT 1[0m
+  [4;35;1mLecture Create (0.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:58', 'TR', '2010-07-24 03:40:58', '2000-01-01 13:40:00', 86, 'RWW220
+')[0m
+  [4;36;1mCourse Load (5.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 309 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.5ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 226) LIMIT 1[0m
+  [4;36;1mLecture Create (0.7ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:40:58', 'TR', '2010-07-24 03:40:58', '2000-01-01 10:30:00', 93, 'GBLT3
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 314 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 233) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:40:59', 'MW', '2010-07-24 03:40:59', '2000-01-01 10:30:00', 94, 'GBLT3
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 316 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 3587) LIMIT 1[0m
+  [4;36;1mLecture Create (5.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:30:00', '2010-07-24 03:40:59', 'F', '2010-07-24 03:40:59', '2000-01-01 15:40:00', 95, 'GBLT4
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 316 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 3587) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:40:59', 'TW', '2010-07-24 03:40:59', '2000-01-01 16:40:00', 95, 'GBLT4
+')[0m
+  [4;36;1mCourse Load (0.6ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 316 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 3587) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 18:30:00', '2010-07-24 03:40:59', 'W', '2010-07-24 03:40:59', '2000-01-01 17:40:00', 95, 'GBG07
+')[0m
+  [4;35;1mCourse Load (1.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 316 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 3587) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:30:00', '2010-07-24 03:40:59', 'F', '2010-07-24 03:40:59', '2000-01-01 14:40:00', 95, 'RHG01
+')[0m
+  [4;36;1mCourse Load (1.1ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 316 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.5ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 3587) LIMIT 1[0m
+  [4;36;1mLecture Create (0.4ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 18:30:00', '2010-07-24 03:40:59', 'T', '2010-07-24 03:40:59', '2000-01-01 17:40:00', 95, 'RHG01
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 321 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 13722) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:40:59', 'MR', '2010-07-24 03:40:59', '2000-01-01 15:40:00', 100, 'GBLT4
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 330 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L2' AND "streams"."crn" = 18312) LIMIT 1[0m
+  [4;36;1mLecture Create (0.3ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:20:00', '2010-07-24 03:40:59', 'TW', '2010-07-24 03:40:59', '2000-01-01 09:30:00', 101, 'RHLT1
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 330 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (6.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L2' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.7ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:40:59', 'MRF', '2010-07-24 03:40:59', '2000-01-01 12:40:00', 102, 'RWW221
+')[0m
+  [4;36;1mCourse Load (0.7ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 330 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (4.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L2' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.6ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:20:00', '2010-07-24 03:40:59', 'W', '2010-07-24 03:40:59', '2000-01-01 11:30:00', 102, 'RWW221
+')[0m
+  [4;35;1mCourse Load (8.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 330 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L2' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:20:00', '2010-07-24 03:41:00', 'T', '2010-07-24 03:41:00', '2000-01-01 11:30:00', 102, 'RWW220
+')[0m
+  [4;36;1mCourse Load (4.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 404 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 242) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:41:00', 'T', '2010-07-24 03:41:00', '2000-01-01 14:40:00', 105, 'RHG01
+')[0m
+  [4;35;1mCourse Load (6.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 407 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.6ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 246) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:41:00', 'W', '2010-07-24 03:41:00', '2000-01-01 09:30:00', 106, 'RHG01
+')[0m
+  [4;36;1mCourse Load (0.7ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 413 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.5ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 2166) LIMIT 1[0m
+  [4;36;1mLecture Create (5.0ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:30:00', '2010-07-24 03:41:00', 'W', '2010-07-24 03:41:00', '2000-01-01 13:40:00', 107, 'RHG01
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ALIN' AND "courses"."code" = 202 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 11416) LIMIT 1[0m
+  [4;35;1mLecture Create (11.2ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:00:00', '2010-07-24 03:41:00', 'MR', '2010-07-24 03:41:00', '2000-01-01 16:10:00', 108, 'MCLT102
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ALIN' AND "courses"."code" = 202 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 11416) LIMIT 1[0m
+  [4;36;1mLecture Create (24.0ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:50:00', '2010-07-24 03:41:00', 'F', '2010-07-24 03:41:00', '2000-01-01 10:00:00', 108, 'MY303
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ALIN' AND "courses"."code" = 202 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (1.5ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 11416) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:50:00', '2010-07-24 03:41:00', 'R', '2010-07-24 03:41:00', '2000-01-01 10:00:00', 108, 'KP22104
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ALIN' AND "courses"."code" = 202 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (13.6ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 11416) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:50:00', '2010-07-24 03:41:00', 'F', '2010-07-24 03:41:00', '2000-01-01 10:00:00', 108, 'VZ506
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ALIN' AND "courses"."code" = 202 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (1.1ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 11416) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:00:00', '2010-07-24 03:41:00', 'W', '2010-07-24 03:41:00', '2000-01-01 15:10:00', 108, 'KP24201
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ALIN' AND "courses"."code" = 202 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 11416) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:50:00', '2010-07-24 03:41:00', 'TW', '2010-07-24 03:41:00', '2000-01-01 10:00:00', 108, 'OK524
+')[0m
+  [4;35;1mCourse Load (2.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ALIN' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 10213) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:00:00', '2010-07-24 03:41:00', 'RF', '2010-07-24 03:41:00', '2000-01-01 13:10:00', 114, 'LBLT118
+')[0m
+  [4;36;1mCourse Load (6.3ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ALIN' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 10213) LIMIT 1[0m
+  [4;36;1mLecture Create (0.7ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:00:00', '2010-07-24 03:41:00', 'W', '2010-07-24 03:41:00', '2000-01-01 14:10:00', 114, 'EA004
+')[0m
+  [4;35;1mCourse Load (0.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ALIN' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.2ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 10213) LIMIT 1[0m
+  [4;35;1mLecture Create (2.4ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:00:00', '2010-07-24 03:41:00', 'W', '2010-07-24 03:41:00', '2000-01-01 15:10:00', 114, 'KP24202
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ANTH' AND "courses"."code" = 102 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 267) LIMIT 1[0m
+  [4;36;1mLecture Create (1.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:00:00', '2010-07-24 03:41:00', 'MWF', '2010-07-24 03:41:00', '2000-01-01 15:10:00', 117, 'HMLT206
+')[0m
+  [4;35;1mCourse Load (5.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ANTH' AND "courses"."code" = 102 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 267) LIMIT 1[0m
+  [4;35;1mLecture Create (0.8ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:00:00', '2010-07-24 03:41:00', 'T', '2010-07-24 03:41:00', '2000-01-01 15:10:00', 117, 'KK201
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ANTH' AND "courses"."code" = 102 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 267) LIMIT 1[0m
+  [4;36;1mLecture Create (5.0ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:50:00', '2010-07-24 03:41:00', 'M', '2010-07-24 03:41:00', '2000-01-01 11:00:00', 117, 'MY404
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ANTH' AND "courses"."code" = 102 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 267) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 09:50:00', '2010-07-24 03:41:00', 'M', '2010-07-24 03:41:00', '2000-01-01 09:00:00', 117, 'VZ510
+')[0m
+  [4;36;1mCourse Load (0.6ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ANTH' AND "courses"."code" = 102 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 267) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:50:00', '2010-07-24 03:41:01', 'W', '2010-07-24 03:41:01', '2000-01-01 12:00:00', 117, 'KK201
+')[0m
+  [4;35;1mCourse Load (16.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ANTH' AND "courses"."code" = 102 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 267) LIMIT 1[0m
+  [4;35;1mLecture Create (0.1ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:00:00', '2010-07-24 03:41:01', 'F', '2010-07-24 03:41:01', '2000-01-01 13:10:00', 117, 'KK201
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ANTH' AND "courses"."code" = 102 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 267) LIMIT 1[0m
+  [4;36;1mLecture Create (0.6ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 09:50:00', '2010-07-24 03:41:01', 'T', '2010-07-24 03:41:01', '2000-01-01 09:00:00', 117, 'VZ509
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ANTH' AND "courses"."code" = 102 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 267) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:00:00', '2010-07-24 03:41:01', 'R', '2010-07-24 03:41:01', '2000-01-01 14:10:00', 117, 'VZ515
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ANTH' AND "courses"."code" = 102 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (1.0ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 267) LIMIT 1[0m
+  [4;36;1mLecture Create (0.2ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:00:00', '2010-07-24 03:41:01', 'T', '2010-07-24 03:41:01', '2000-01-01 16:10:00', 117, 'KK201
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ANTH' AND "courses"."code" = 102 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (11.1ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 267) LIMIT 1[0m
+  [4;35;1mLecture Create (0.7ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:00:00', '2010-07-24 03:41:01', 'W', '2010-07-24 03:41:01', '2000-01-01 13:10:00', 117, 'VZ105
+')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (81.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (12.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateCourses (20100724005946)
+  [4;35;1mSQL (8.1ms)[0m   [0mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "trimester" varchar(255), "course" varchar(255), "code" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100724005946')[0m
+Migrating to CreateStreams (20100724010431)
+  [4;35;1mSQL (9.9ms)[0m   [0mCREATE TABLE "streams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "crn" integer, "type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100724010431')[0m
+Migrating to CreateLectures (20100724010709)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "lectures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "days" varchar(255), "start" time, "finish" time, "room" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100724010709')[0m
+Migrating to ChangeTypeToTypeId (20100724022330)
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_streams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "crn" integer, "type_id" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("streams")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDROP TABLE "streams"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "streams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "crn" integer, "type_id" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_streams")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "altered_streams"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100724022330')[0m
+Migrating to AddStreamIdToCourses (20100724033400)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "streams" ADD "course_id" integer[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "lectures" ADD "stream_id" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100724033400')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("courses")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("lectures")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("streams")[0m
+  [4;36;1mCourse Load (0.8ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 1 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mCourse Create (0.8ms)[0m   [0mINSERT INTO "courses" ("course", "created_at", "code", "updated_at", "trimester") VALUES('ACCY', '2010-07-24 03:41:32', 1, '2010-07-24 03:41:32', 'Trimester 2')[0m
+  [4;36;1mStream Load (1.7ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L2' AND "streams"."crn" = 15420) LIMIT 1[0m
+  [4;35;1mStream Create (0.4ms)[0m   [0mINSERT INTO "streams" ("created_at", "updated_at", "type_id", "crn", "course_id") VALUES('2010-07-24 03:41:32', '2010-07-24 03:41:32', 'L2', 15420, 1)[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:30:00', '2010-07-24 03:41:32', 'T', '2010-07-24 03:41:32', '2000-01-01 14:40:00', 1, 'RWW222
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mCourse Create (2.1ms)[0m   [0;1mINSERT INTO "courses" ("course", "created_at", "code", "updated_at", "trimester") VALUES('ACCY', '2010-07-24 03:41:32', 111, '2010-07-24 03:41:32', 'Trimester 2')[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 6604) LIMIT 1[0m
+  [4;36;1mStream Create (0.4ms)[0m   [0;1mINSERT INTO "streams" ("created_at", "updated_at", "type_id", "crn", "course_id") VALUES('2010-07-24 03:41:32', '2010-07-24 03:41:32', 'L3', 6604, 2)[0m
+  [4;35;1mLecture Create (1.7ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 09:50:00', '2010-07-24 03:41:32', 'MW', '2010-07-24 03:41:32', '2000-01-01 09:00:00', 2, 'KKLT303
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 6604) LIMIT 1[0m
+  [4;36;1mLecture Create (0.9ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 09:50:00', '2010-07-24 03:41:32', 'R', '2010-07-24 03:41:32', '2000-01-01 09:00:00', 2, 'KKLT303
+')[0m
+  [4;35;1mCourse Load (1.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L4' AND "streams"."crn" = 6605) LIMIT 1[0m
+  [4;35;1mStream Create (9.7ms)[0m   [0mINSERT INTO "streams" ("created_at", "updated_at", "type_id", "crn", "course_id") VALUES('2010-07-24 03:41:32', '2010-07-24 03:41:32', 'L4', 6605, 2)[0m
+  [4;36;1mLecture Create (4.1ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:50:00', '2010-07-24 03:41:32', 'MW', '2010-07-24 03:41:32', '2000-01-01 11:00:00', 3, 'KKLT303
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (8.7ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L4' AND "streams"."crn" = 6605) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:50:00', '2010-07-24 03:41:32', 'R', '2010-07-24 03:41:32', '2000-01-01 11:00:00', 3, 'KKLT303
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mStream Create (0.5ms)[0m   [0;1mINSERT INTO "streams" ("created_at", "updated_at", "type_id", "crn", "course_id") VALUES('2010-07-24 03:41:32', '2010-07-24 03:41:32', 'L3', 0, 2)[0m
+  [4;35;1mLecture Create (0.4ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:50:00', '2010-07-24 03:41:32', 'W', '2010-07-24 03:41:32', '2000-01-01 12:00:00', 4, 'OK501
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:41:32', 'MR', '2010-07-24 03:41:32', '2000-01-01 10:00:00', 4, 'VZ509
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (16.1ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (3.0ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:41:32', 'W', '2010-07-24 03:41:32', '2000-01-01 10:00:00', 4, 'HU113
+')[0m
+  [4;36;1mCourse Load (9.8ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 08:50:00', '2010-07-24 03:41:33', 'R', '2010-07-24 03:41:33', '2000-01-01 08:00:00', 4, 'KK103
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (5.9ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:00:00', '2010-07-24 03:41:33', 'M', '2010-07-24 03:41:33', '2000-01-01 15:10:00', 4, 'OK501
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (16.7ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (16.1ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:00:00', '2010-07-24 03:41:33', 'MW', '2010-07-24 03:41:33', '2000-01-01 13:10:00', 4, 'OK501
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (8.1ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:50:00', '2010-07-24 03:41:33', 'F', '2010-07-24 03:41:33', '2000-01-01 11:00:00', 4, 'OK501
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.4ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:50:00', '2010-07-24 03:41:33', 'M', '2010-07-24 03:41:33', '2000-01-01 12:00:00', 4, 'EA001
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (3.0ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:00:00', '2010-07-24 03:41:33', 'T', '2010-07-24 03:41:33', '2000-01-01 13:10:00', 4, 'EA026
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:50:00', '2010-07-24 03:41:33', 'MR', '2010-07-24 03:41:33', '2000-01-01 12:00:00', 4, 'HU317
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (4.0ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (25.0ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:41:33', 'W', '2010-07-24 03:41:33', '2000-01-01 10:00:00', 4, 'MY105
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.4ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:50:00', '2010-07-24 03:41:33', 'T', '2010-07-24 03:41:33', '2000-01-01 11:00:00', 4, 'KK103
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (8.1ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:50:00', '2010-07-24 03:41:33', 'R', '2010-07-24 03:41:33', '2000-01-01 12:00:00', 4, 'OK301
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (11.7ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:41:33', 'F', '2010-07-24 03:41:33', '2000-01-01 10:00:00', 4, 'KK103
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (5.0ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:50:00', '2010-07-24 03:41:33', 'MWF', '2010-07-24 03:41:33', '2000-01-01 12:00:00', 4, 'KK103
+')[0m
+  [4;36;1mCourse Load (1.2ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:00:00', '2010-07-24 03:41:33', 'MF', '2010-07-24 03:41:33', '2000-01-01 13:10:00', 4, 'KK103
+')[0m
+  [4;35;1mCourse Load (1.1ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:00:00', '2010-07-24 03:41:33', 'M', '2010-07-24 03:41:33', '2000-01-01 14:10:00', 4, 'KK104
+')[0m
+  [4;36;1mCourse Load (5.8ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (7.1ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.1ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:41:33', 'M', '2010-07-24 03:41:33', '2000-01-01 10:00:00', 4, 'EA004
+')[0m
+  [4;35;1mCourse Load (7.7ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.3ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:00:00', '2010-07-24 03:41:33', 'MWR', '2010-07-24 03:41:33', '2000-01-01 14:10:00', 4, 'KK105
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:00:00', '2010-07-24 03:41:33', 'R', '2010-07-24 03:41:33', '2000-01-01 13:10:00', 4, 'VZ515
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (2.2ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:41:34', 'W', '2010-07-24 03:41:34', '2000-01-01 10:00:00', 4, 'EA026
+')[0m
+  [4;36;1mCourse Load (0.6ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.9ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (10.9ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:41:34', 'R', '2010-07-24 03:41:34', '2000-01-01 10:00:00', 4, 'AM104
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (6.7ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:50:00', '2010-07-24 03:41:34', 'TR', '2010-07-24 03:41:34', '2000-01-01 12:00:00', 4, 'EA026
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (7.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.7ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:50:00', '2010-07-24 03:41:34', 'MR', '2010-07-24 03:41:34', '2000-01-01 10:00:00', 4, 'VZ510
+')[0m
+  [4;35;1mCourse Load (0.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.5ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:00:00', '2010-07-24 03:41:34', 'R', '2010-07-24 03:41:34', '2000-01-01 13:10:00', 4, 'VZ510
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 111 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.5ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (3.4ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:00:00', '2010-07-24 03:41:34', 'T', '2010-07-24 03:41:34', '2000-01-01 14:10:00', 4, 'KK103
+')[0m
+  [4;35;1mCourse Load (0.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mCourse Create (0.6ms)[0m   [0;1mINSERT INTO "courses" ("course", "created_at", "code", "updated_at", "trimester") VALUES('ACCY', '2010-07-24 03:41:34', 225, '2010-07-24 03:41:34', 'Trimester 2')[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 15281) LIMIT 1[0m
+  [4;36;1mStream Create (0.5ms)[0m   [0;1mINSERT INTO "streams" ("created_at", "updated_at", "type_id", "crn", "course_id") VALUES('2010-07-24 03:41:34', '2010-07-24 03:41:34', 'L1', 15281, 3)[0m
+  [4;35;1mLecture Create (1.0ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:41:34', 'TR', '2010-07-24 03:41:34', '2000-01-01 13:40:00', 5, 'RHLT1
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L2' AND "streams"."crn" = 18776) LIMIT 1[0m
+  [4;36;1mStream Create (7.1ms)[0m   [0;1mINSERT INTO "streams" ("created_at", "updated_at", "type_id", "crn", "course_id") VALUES('2010-07-24 03:41:34', '2010-07-24 03:41:34', 'L2', 18776, 3)[0m
+  [4;35;1mLecture Create (0.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:41:34', 'R', '2010-07-24 03:41:34', '2000-01-01 16:40:00', 6, 'GBLT1
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.6ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L2' AND "streams"."crn" = 18776) LIMIT 1[0m
+  [4;36;1mLecture Create (0.6ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:41:34', 'T', '2010-07-24 03:41:34', '2000-01-01 16:40:00', 6, 'RHLT2
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mStream Create (1.7ms)[0m   [0mINSERT INTO "streams" ("created_at", "updated_at", "type_id", "crn", "course_id") VALUES('2010-07-24 03:41:34', '2010-07-24 03:41:34', 'L1', 0, 3)[0m
+  [4;36;1mLecture Create (15.4ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:41:34', 'W', '2010-07-24 03:41:34', '2000-01-01 10:30:00', 7, 'RWW222
+')[0m
+  [4;35;1mCourse Load (1.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (4.2ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (10.3ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:20:00', '2010-07-24 03:41:34', 'TR', '2010-07-24 03:41:34', '2000-01-01 09:30:00', 7, 'RWW223
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.4ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:30:00', '2010-07-24 03:41:34', 'M', '2010-07-24 03:41:34', '2000-01-01 15:40:00', 7, 'RWW222
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.6ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:41:34', 'M', '2010-07-24 03:41:34', '2000-01-01 13:40:00', 7, 'RWW220
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.5ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.6ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:41:35', 'M', '2010-07-24 03:41:35', '2000-01-01 16:40:00', 7, 'RWW222
+')[0m
+  [4;35;1mCourse Load (0.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.5ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (14.1ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:20:00', '2010-07-24 03:41:35', 'TR', '2010-07-24 03:41:35', '2000-01-01 10:30:00', 7, 'RWW223
+')[0m
+  [4;36;1mCourse Load (13.7ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (1.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (15.1ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:30:00', '2010-07-24 03:41:35', 'TR', '2010-07-24 03:41:35', '2000-01-01 15:40:00', 7, 'RWW223
+')[0m
+  [4;35;1mCourse Load (0.1ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.5ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:41:35', 'WF', '2010-07-24 03:41:35', '2000-01-01 13:40:00', 7, 'RWW313
+')[0m
+  [4;36;1mCourse Load (5.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (17.7ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:41:35', 'W', '2010-07-24 03:41:35', '2000-01-01 11:30:00', 7, ' 
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (9.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (8.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:41:35', 'WF', '2010-07-24 03:41:35', '2000-01-01 12:40:00', 7, 'RWW313
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (12.5ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.6ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:30:00', '2010-07-24 03:41:35', 'TR', '2010-07-24 03:41:35', '2000-01-01 14:40:00', 7, 'RWW312
+')[0m
+  [4;35;1mCourse Load (0.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (2.7ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:41:35', 'TR', '2010-07-24 03:41:35', '2000-01-01 12:40:00', 7, 'RWW312
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (9.1ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.6ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:41:35', 'T', '2010-07-24 03:41:35', '2000-01-01 16:40:00', 7, 'RWW223
+')[0m
+  [4;35;1mCourse Load (7.9ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:41:35', 'M', '2010-07-24 03:41:35', '2000-01-01 12:40:00', 7, 'RWW220
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.7ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.6ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:30:00', '2010-07-24 03:41:35', 'TR', '2010-07-24 03:41:35', '2000-01-01 14:40:00', 7, 'RWW223
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:30:00', '2010-07-24 03:41:36', 'M', '2010-07-24 03:41:36', '2000-01-01 14:40:00', 7, 'RWW222
+')[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (5.8ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (23.1ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:41:36', 'TR', '2010-07-24 03:41:36', '2000-01-01 12:40:00', 7, 'RWW223
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (1.6ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:41:36', 'M', '2010-07-24 03:41:36', '2000-01-01 11:30:00', 7, 'RWW222
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:20:00', '2010-07-24 03:41:36', 'M', '2010-07-24 03:41:36', '2000-01-01 10:30:00', 7, 'RWW222
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 225 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 0) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:41:36', 'TRF', '2010-07-24 03:41:36', '2000-01-01 11:30:00', 7, 'RWW223
+')[0m
+  [4;36;1mCourse Load (12.3ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mCourse Create (0.4ms)[0m   [0mINSERT INTO "courses" ("course", "created_at", "code", "updated_at", "trimester") VALUES('ACCY', '2010-07-24 03:41:36', 302, '2010-07-24 03:41:36', 'Trimester 2')[0m
+  [4;36;1mStream Load (0.0ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L2' AND "streams"."crn" = 213) LIMIT 1[0m
+  [4;35;1mStream Create (0.6ms)[0m   [0mINSERT INTO "streams" ("created_at", "updated_at", "type_id", "crn", "course_id") VALUES('2010-07-24 03:41:36', '2010-07-24 03:41:36', 'L2', 213, 4)[0m
+  [4;36;1mLecture Create (15.3ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 16:30:00', '2010-07-24 03:41:36', 'TWF', '2010-07-24 03:41:36', '2000-01-01 15:40:00', 8, 'RHLT2
+')[0m
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;35;1mStream Create (0.1ms)[0m   [0mINSERT INTO "streams" ("created_at", "updated_at", "type_id", "crn", "course_id") VALUES('2010-07-24 03:41:36', '2010-07-24 03:41:36', 'L3', 15423, 4)[0m
+  [4;36;1mLecture Create (0.7ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:41:36', 'TWF', '2010-07-24 03:41:36', '2000-01-01 12:40:00', 9, 'GBLT2
+')[0m
+  [4;35;1mCourse Load (5.2ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (18.9ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;35;1mLecture Create (0.4ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:30:00', '2010-07-24 03:41:36', 'F', '2010-07-24 03:41:36', '2000-01-01 14:40:00', 9, 'RWW126
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;36;1mLecture Create (3.2ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:41:36', 'TF', '2010-07-24 03:41:36', '2000-01-01 13:40:00', 9, 'RWW126
+')[0m
+  [4;35;1mCourse Load (0.9ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 10:20:00', '2010-07-24 03:41:36', 'MT', '2010-07-24 03:41:36', '2000-01-01 09:30:00', 9, 'RWW222
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.5ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:41:36', 'MT', '2010-07-24 03:41:36', '2000-01-01 11:30:00', 9, 'RWW125
+')[0m
+  [4;35;1mCourse Load (3.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:41:36', 'W', '2010-07-24 03:41:36', '2000-01-01 12:40:00', 9, 'RWW125
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;36;1mLecture Create (0.6ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:41:36', 'W', '2010-07-24 03:41:36', '2000-01-01 13:40:00', 9, 'RWW223
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;35;1mLecture Create (5.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 12:20:00', '2010-07-24 03:41:36', 'T', '2010-07-24 03:41:36', '2000-01-01 11:30:00', 9, 'RWW126
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (4.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:41:36', 'TW', '2010-07-24 03:41:36', '2000-01-01 16:40:00', 9, 'RWW125
+')[0m
+  [4;35;1mCourse Load (10.9ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.4ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 11:20:00', '2010-07-24 03:41:37', 'MT', '2010-07-24 03:41:37', '2000-01-01 10:30:00', 9, 'RWW125
+')[0m
+  [4;36;1mCourse Load (0.6ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 302 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L3' AND "streams"."crn" = 15423) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 18:30:00', '2010-07-24 03:41:37', 'T', '2010-07-24 03:41:37', '2000-01-01 17:40:00', 9, 'RWW125
+')[0m
+  [4;35;1mCourse Load (0.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mCourse Create (0.5ms)[0m   [0;1mINSERT INTO "courses" ("course", "created_at", "code", "updated_at", "trimester") VALUES('ACCY', '2010-07-24 03:41:37', 303, '2010-07-24 03:41:37', 'Trimester 2')[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;36;1mStream Create (0.0ms)[0m   [0;1mINSERT INTO "streams" ("created_at", "updated_at", "type_id", "crn", "course_id") VALUES('2010-07-24 03:41:37', '2010-07-24 03:41:37', 'L1', 216, 5)[0m
+  [4;35;1mLecture Create (0.9ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 15:30:00', '2010-07-24 03:41:37', 'MWR', '2010-07-24 03:41:37', '2000-01-01 14:40:00', 10, 'RHLT2
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.3ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;36;1mLecture Create (0.6ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:41:37', 'M', '2010-07-24 03:41:37', '2000-01-01 15:40:00', 10, 'RWW126
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;35;1mLecture Create (0.6ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:41:37', 'R', '2010-07-24 03:41:37', '2000-01-01 13:40:00', 10, 'RWW129
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:41:37', 'W', '2010-07-24 03:41:37', '2000-01-01 15:40:00', 10, 'RWW413
+')[0m
+  [4;35;1mCourse Load (3.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (5.0ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;35;1mLecture Create (9.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:41:37', 'W', '2010-07-24 03:41:37', '2000-01-01 12:40:00', 10, 'RWW128
+')[0m
+  [4;36;1mCourse Load (19.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;36;1mLecture Create (6.2ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:41:37', 'TF', '2010-07-24 03:41:37', '2000-01-01 12:40:00', 10, 'RWW127
+')[0m
+  [4;35;1mCourse Load (5.9ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (0.5ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;35;1mLecture Create (0.5ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 17:30:00', '2010-07-24 03:41:37', 'WR', '2010-07-24 03:41:37', '2000-01-01 15:40:00', 10, 'RWW312
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (7.1ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:41:37', 'W', '2010-07-24 03:41:37', '2000-01-01 13:40:00', 10, 'RWW220
+')[0m
+  [4;35;1mCourse Load (0.3ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (4.6ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;35;1mLecture Create (5.2ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:41:37', 'R', '2010-07-24 03:41:37', '2000-01-01 12:40:00', 10, 'RWW125
+')[0m
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mStream Load (0.4ms)[0m   [0mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;36;1mLecture Create (0.3ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:41:38', 'MR', '2010-07-24 03:41:38', '2000-01-01 12:40:00', 10, 'RWW126
+')[0m
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 303 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;36;1mStream Load (7.7ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 216) LIMIT 1[0m
+  [4;35;1mLecture Create (1.1ms)[0m   [0mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 14:30:00', '2010-07-24 03:41:38', 'T', '2010-07-24 03:41:38', '2000-01-01 12:40:00', 10, 'RWW129
+')[0m
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."course" = 'ACCY' AND "courses"."code" = 306 AND "courses"."trimester" = 'Trimester 2') LIMIT 1[0m
+  [4;35;1mCourse Create (0.5ms)[0m   [0mINSERT INTO "courses" ("course", "created_at", "code", "updated_at", "trimester") VALUES('ACCY', '2010-07-24 03:41:38', 306, '2010-07-24 03:41:38', 'Trimester 2')[0m
+  [4;36;1mStream Load (0.3ms)[0m   [0;1mSELECT * FROM "streams" WHERE ("streams"."type_id" = 'L1' AND "streams"."crn" = 220) LIMIT 1[0m
+  [4;35;1mStream Create (0.8ms)[0m   [0mINSERT INTO "streams" ("created_at", "updated_at", "type_id", "crn", "course_id") VALUES('2010-07-24 03:41:38', '2010-07-24 03:41:38', 'L1', 220, 6)[0m
+  [4;36;1mLecture Create (0.5ms)[0m   [0;1mINSERT INTO "lectures" ("finish", "created_at", "days", "updated_at", "start", "stream_id", "room") VALUES('2000-01-01 13:30:00', '2010-07-24 03:41:38', 'M', '2010-07-24 03:41:38', '2000-01-01 12:40:00', 11, 'RHLT2
+')[0m
+
+
+Processing PlannerController#index (for 127.0.0.1 at 2010-07-24 15:42:19) [GET]
+  [4;36;1mCourse Load (9.0ms)[0m   [0;1mSELECT * FROM "courses" ORDER BY course[0m
+Rendering template within layouts/planner
+Rendering planner/index
+Completed in 195ms (View: 122, DB: 9) | 200 OK [http://localhost/planner/]

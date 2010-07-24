@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100724022330) do
+ActiveRecord::Schema.define(:version => 20100724033400) do
 
   create_table "courses", :force => true do |t|
     t.string   "trimester"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20100724022330) do
     t.string   "room"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "stream_id"
   end
 
   create_table "streams", :force => true do |t|
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20100724022330) do
     t.string   "type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "course_id"
   end
 
 end

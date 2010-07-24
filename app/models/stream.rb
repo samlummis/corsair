@@ -2,6 +2,6 @@ class Stream < ActiveRecord::Base
 
 has_many :lectures
 
-has_one :course
+belongs_to :course
 
 end
