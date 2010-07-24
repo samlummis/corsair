@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  trimester: MyString
+  course: MyString
+  code: 1
+
+two:
+  trimester: MyString
+  course: MyString
+  code: 1

@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  crn: 1
+  type: MyString
+
+two:
+  crn: 1
+  type: MyString
