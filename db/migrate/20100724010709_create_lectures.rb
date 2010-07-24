@@ -2,8 +2,8 @@ class CreateLectures < ActiveRecord::Migration
   def self.up
     create_table :lectures do |t|
       t.string :days
-      t.start :time
-      t.finish :time
+      t.time :start
+      t.time :finish
       t.string :room
 
       t.timestamps
