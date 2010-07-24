@@ -1,1 +1,8 @@
 *~
+
+db/schema.rb
+log/*.log
+*~
+/tmp
+db/development.sqlite3
+

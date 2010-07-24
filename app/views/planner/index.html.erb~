@@ -1,0 +1,16 @@
+<div class="grid_6 box inline">
+  <h2>Course List</h2>
+
+  <% form_tag "/planner" do %>
+    <%= select_tag(:course_id, options_for_select(@courses.collect(&:id),@courses.collect(&:course_and_code)), options = {}, html_options = {}) %>
+  <% end %>
+
+  <p>
+    <ul>
+      <% for c in @courses -%>
+          <li><%=h c.course c.code %></li>
+      <% end %>
+    </ul>
+  </p>
+
+</div>

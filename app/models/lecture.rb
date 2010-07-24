@@ -1,5 +1,5 @@
 class Lecture < ActiveRecord::Base
 
-has_one :stream
+belongs_to :stream
 
 end
