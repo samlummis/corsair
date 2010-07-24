@@ -1,16 +1,37 @@
-<div class="grid_6 box inline">
-  <h2>Course List</h2>
+<div class="grid_6 inline">
+  <div class="box">
+    <h2>Course List</h2>
 
-  <% form_tag "/planner" do %>
-    <%= select_tag(:course_id, options_for_select(@courses.collect(&:id),@courses.collect(&:course_and_code))) %>
-  <% end %>
+    <% form_tag "/planner" do %>
+      <%= select_tag(:course_id, options_for_select(@courses.collect{|c| [c.course_and_code, c.id]})) %>
+      <%= submit_tag "Add Course" %>
+    <% end %>
 
-  <p>
+  </div>
+</div>
+
+
+<div class="grid_6 inline">
+  <div class="box">
+    <h2>Rules</h2>
+  </div
+</div>
+
+<div class="grid_12 inline">
+  <div class="box">
+    <h2>My Timetable</h2> 
     <ul>
-      <% for c in @courses -%>
-          <li><%=h "#{c.course}, #{c.code_string}" %></li>
+      <% @course_list && @course_list.each do | course | %>
+        <li><%=h course.course_and_code %>
+          <ul>
+            <% Stream.find(:all, :conditions => {:course_id => course.id}).each do |stream| %>
+              <li><%=h Lecture.find_by_stream_id(stream.id).start.strftime("%H:%m") %>
+              <%=h Lecture.find_by_stream_id(stream.id).days %>        
+              </li>
+            <% end %>
+           </ul>
+        </li>
       <% end %>
     </ul>
-  </p>
-
+  </div>
 </div>
