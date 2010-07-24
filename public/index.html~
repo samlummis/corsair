@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-nz" />
+
+	<title>Corsair - Your course planning tool</title>
+	
+	<meta name="description" content="Corsair - Easily plan a timetable which suits you. No early mornings, no late nights!" />
+	<meta name="keywords" content="Corsair, course, timetable, plan, Victoria, University, lecture Ruby, Rails" />
+	<meta name="author" content="" />
+
+	
+	<link rel="stylesheet" type="text/css" media="all" href="stylesheets/960.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="stylesheets/mainstyle.css" />
+	
+	<link rel="icon" type="image/gif" href="images/layout/favicon.gif" />
+	
+</head>
+	
+<body>
+
+<!-- This website makes use of the 960 grid system! Check it out at 960.gs :) //-->
+
+<div class="container_12">
+
+	<!--Header //-->
+	<div class="grid_12 header">
+		<a href="index.html">
+			<img src="images/layout/logo.gif" alt="Corsair - your course planning tool" />
+		</a>
+		
+		<a href="index.html">
+			<img src="images/layout/home.gif" alt="Home" />
+		</a>
+		<a href="planner/">
+			<img src="images/layout/planner.gif" alt="Planner" />
+		</a>
+		<a href="blank.html">
+			<img src="images/layout/about.gif" alt="About" />
+		</a>
+	</div>
+		
+		
+	<!--Main page content//-->
+	<div class="content">
+	
+		<div class="grid_12">
+		
+			<div class="grid_12 inline">
+				<div class="grid_8 inline">
+					<div class="box blueBG welcome">
+						<h2><img src="images/layout/kia_ora.gif" alt="Kia ora!"/></h2>
+						<p>
+							Sick of timetables where you have class at 8am? Want to get home before 5pm? 
+							Are there some days you need some extra time? 
+							If this sounds like you, you're in the right place. Corsair is <em>your</em> course planning tool.
+						</p>
+						<p>
+							Lay down some rules about when you want to be at uni, pick some courses, and we'll find
+							the best combination to fit you.
+						</p>
+					</div>
+				</div>
+				
+				<div class="grid_4 inline" style="height: 100%;">
+				<br /><br /><br /><br />
+					<div class="box blueBG welcome center">
+						<h2>
+							Ready to make life easier?
+						</h2>
+						<p>
+							<a href="blank.html">
+								<img src="images/layout/get_started.gif" alt="Get Started!" />
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>	
+			
+		</div>
+		
+		
+		
+		<!-- Bottom Contents //-->
+		
+		<div class="grid_12">
+		
+			<div class="grid_6 inline">
+				<div class="box">
+					<h2>Why use Corsair?</h2>
+					<p>
+						Getting a great time table is often hard, if not impossible. Flipping through Course catalogues to see which you can fit into a timetable, re-shuffling, finding out you can't do a certain time - sound familiar? With Corsair you select the courses which interest you, prioritise them, add some time constraints and you are given a timetable which best suits you!
+					</p>
+					<p>
+						Give it a go! <a href="planner/">Get started now</a>.
+					</p>
+					
+				</div>		
+			</div>
+			
+			<div class="grid_6 inline">		
+				<div class="box">		
+					<h2>What is Corsair?</h2>
+					<p>
+						
+						<img src="http://recruit.summerofcode.co.nz/images/soc-nerd-3.png" style="width: 150px; float:right;" />
+					
+						Developed using <a href="http://rubyonrails.org/" title="Visit the Ruby on Rails website">Ruby on Rails</a> for the Wellington <a href="http://summeroftech.co.nz" title="Visit the Summer of Tech website">Summer of Tech</a> Hackfest 2010 this tool scrapes a course list from Victoria University and provides an interface for showing which courses and course streams best fit a given set of rules.
+					</p>
+				</div>
+			</div>
+			
+		</div>
+				
+		<div class="grid_6">		
+			<div class="box">
+				<h2>Updates</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>		
+		</div>
+
+	</div>
+	
+	<!-- Footer //-->
+
+	<div class="grid_12 footer">
+		<p>
+			Footer
+		</p>
+	</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

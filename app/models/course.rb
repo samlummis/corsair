@@ -17,4 +17,8 @@ class Course < ActiveRecord::Base
     end
   end
 
+def course_and_code
+  "#{course}#{code}"
+end
+
 end
