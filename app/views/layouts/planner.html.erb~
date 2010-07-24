@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-nz" />
+
+	<title>Corsair - your course planning tool</title>
+	
+	<meta name="description" content="Corsair - Easily plan a timetable which suits you. No early mornings, no late nights!" />
+	<meta name="keywords" content="Corsair, course, timetable, plan, Victoria, University, lecture Ruby, Rails" />
+	<meta name="author" content="Cameron Fowler, Nick Malcolm and Sam Lummis" />
+
+<!-- START:stylesheet -->
+  <%= stylesheet_link_tag "960", :media => "all" %>
+  <%= stylesheet_link_tag "mainstyle", :media => "all" %>
+<!-- END:stylesheet -->
+
+	
+</head>
+	
+<body>
+
+<!-- This website makes use of the 960 grid system! Check it out at 960.gs :) //-->
+
+<div class="container_12">
+
+	<!--Header //-->
+	<div class="grid_12 header">
+		<%= link_to image_tag ("layout/logo.gif", :border =>0), "/index.html" %>
+		
+    <%= link_to image_tag ("layout/home.gif", :border =>0), :action => :index %>
+
+    <%= link_to image_tag ("layout/planner.gif", :border =>0), :action => :planner %>
+
+    <%= link_to image_tag ("layout/about.gif", :border =>0), :action => :planner %>
+	</div>
+		
+		
+	<!--Main page content//-->
+	<div class="content">
+	
+		<div class="grid_12">
+			
+      <% if flash[:notice] -%>
+        <div id="grid_12 inline notice"><%= flash[:notice] %></div>
+      <% end -%>
+
+			<%= yield :layout %>
+		
+		</div>
+		
+	</div>
+	
+	<!-- Footer //-->
+
+	<div class="grid_12 footer">
+		<p>
+			Footer
+		</p>
+	</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
