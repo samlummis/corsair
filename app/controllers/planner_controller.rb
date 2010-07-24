@@ -1,6 +1,6 @@
 class PlannerController < ApplicationController
 
-def listCourses
+def index
 	@courses = Course.find_courses
 end
 

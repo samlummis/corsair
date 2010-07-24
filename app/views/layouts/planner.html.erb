@@ -17,7 +17,6 @@
   <%= stylesheet_link_tag "mainstyle", :media => "all" %>
 <!-- END:stylesheet -->
 
-	<link rel="icon" type="image/gif" href="<%= image_tag(\"favicon.gif\") %>" />
 	
 </head>
 	
@@ -29,15 +28,13 @@
 
 	<!--Header //-->
 	<div class="grid_12 header">
-		<%= link_to image_tag ("layout/logo.gif", :border =>0), :action => :index %>
+		<%= link_to image_tag ("layout/logo.gif", :border =>0), "/index.html" %>
 		
-    <%= link_to image_tag ("layout/home.gif", :border =>0), :action => :index %>
+    <%= link_to image_tag ("layout/home.gif", :border =>0), "/index.html" %>
 
     <%= link_to image_tag ("layout/planner.gif", :border =>0), :action => :planner %>
 
-		<a href="blank.html">
-			<img src="images/about.gif" alt="About" />
-		</a>
+    <%= link_to image_tag ("layout/about.gif", :border =>0), "/about.html" %>
 	</div>
 		
 		
@@ -50,7 +47,7 @@
         <div id="grid_12 inline notice"><%= flash[:notice] %></div>
       <% end -%>
 
-			<%= yeild :layout %>
+			<%= yield :layout %>
 		
 		</div>
 		
