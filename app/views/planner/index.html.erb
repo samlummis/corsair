@@ -1,0 +1,11 @@
+<div class="grid_6 box inline">
+  <h2>Course List</h2>
+
+  <p>
+    <ul>
+      <% for c in @courses -%>
+          <li><%=h c.course c.code %></li>
+      <% end %>
+    </ul>
+
+</div>
